@@ -43,15 +43,21 @@ describe("PEMDAS core functions", () => {
 
     describe("testing divide()", () => {
         test("when given positive operands", () => {
-
+            expect(calculator.divide(81,3)).toBe(27);
+            expect(calculator.divide(2,1500)).toBe(0.0013333333);
+            expect(calculator.divide(1300,95)).toBe(13.6842105263);
         });
 
         test("when given negative operands", () => {
-            
+            expect(calculator.divide(-50,-14)).toBe(3.5714285714);
+            expect(calculator.divide(-33,-80)).toBe(0.4125);
+            expect(calculator.divide(-2,-15)).toBe(0.1333333333);
         });
 
         test("when given mixed operands", () => {
-            
+            expect(calculator.divide(951,-3)).toBe(-317);
+            expect(calculator.divide(-5614,39)).toBe(-143.9487179487);
+            expect(calculator.divide(7,-14)).toBe(-0.5);
         });
     });
 
