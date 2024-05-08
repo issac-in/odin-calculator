@@ -50,3 +50,15 @@ function add(operand1, operand2) {
 function subtract(operand1, operand2) {
     return operand1 - operand2;
 }
+
+// Why the if(): https://bit.ly/fix_for_referenceError_module_is_not_defined
+if (typeof module === "object") { 
+    module.exports = {
+        operate,
+        exponent,
+        multiply,
+        divide,
+        add,
+        subtract,
+    };
+}
