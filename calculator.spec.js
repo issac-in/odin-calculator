@@ -83,15 +83,21 @@ describe("PEMDAS core functions", () => {
 
     describe("testing subtract()", () => {
         test("when given positive operands", () => {
-
+            expect(calculator.subtract(1027156,3101176)).toBe(-2074020);
+            expect(calculator.subtract(3227733,1446939)).toBe(1780794);
+            expect(calculator.subtract(1688151,3370533)).toBe(-1682382);
         });
 
         test("when given negative operands", () => {
-            
+            expect(calculator.subtract(-5674856,-4451071)).toBe(-1223785);
+            expect(calculator.subtract(-1082658,-7749133)).toBe(6666475);
+            expect(calculator.subtract(-8777632,-98692)).toBe(-8678940);
         });
 
         test("when given mixed operands", () => {
-            
+            expect(calculator.subtract(5411762,-8308854)).toBe(13720616);
+            expect(calculator.subtract(-464026,1394319)).toBe(-1858345);
+            expect(calculator.subtract(4437122,-1538303)).toBe(5975425);
         });
     });
 });
