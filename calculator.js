@@ -235,18 +235,6 @@ function setDecimal() {
 }
 
 function setOperand(input) {
-/*
-    case (globalOperand1 != null && globalIsDecimal1):
-    case (globalOperand1! != null && !globalIsDecimal1 && globalOperand1 !== 0):
-        display.textContent = display.textContent.concat(input);
-        globalOperand1 = +(display.textContent);
-        break;
-    case (globalOperand1 != null && !globalIsDecimal1 && globalOperand1 === 0):
-    case (globalOperand1 == null):
-        display.textContent = input;
-        globalOperand1 = input;
-        break;
-*/
     if (globalOperator == null) {
         if (globalOperand1 != null) {
             if (globalIsDecimal1) {
@@ -265,23 +253,7 @@ function setOperand(input) {
             display.textContent = input;
             globalOperand1 = input;
         }
-    } 
-
-/*
-    case (globalOperand2 != null && globalIsDecimal2):
-    case (globalOperand2! != null && !globalIsDecimal2 && globalOperand2 !== 0):
-        display.textContent = display.textContent.concat(input);
-        globalOperand2 = +(display.textContent.slice(operand2StartIndex));
-        break;
-    case (globalOperand2 != null && !globalIsDecimal2 && globalOperand2 === 0):
-        display.textContent = display.textContent.slice(0,operand2StartIndex).concat(input);
-        globalOperand2 = input; 
-        break;
-    case (globalOperand2 == null):
-        display.textContent = display.textContent.concat(input);
-        globalOperand2 = input;
-*/
-    else if (globalOperator != null) {
+    } else if (globalOperator != null) {
         if (globalOperand2 != null) {
             const operand2StartIndex = display.textContent
                 .indexOf(globalOperator) + 1;
@@ -374,7 +346,7 @@ function updateOperand(num) {
     }
 }
 
-// Call at RunTime
+// Call at Run-time
 setButtonsListener();
 
 // Why the if(): https://bit.ly/fix_for_referenceError_module_is_not_defined
