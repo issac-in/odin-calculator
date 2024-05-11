@@ -18,6 +18,10 @@ body {
     white-space: nowrap;
     overflow: hidden;
     font-size: xx-large;
+    border-left: 8px solid #2c2c2c;
+    border-right: 8px solid #2c2c2c;
+    border-radius: 6px;
+    background-color: #2c2c2c;
     color: white;
 }
 
@@ -70,4 +74,12 @@ button:focus {
 
 .red-accent {
     color: red;
+}
+
+.horizontal-line {
+    margin: 12px auto;
+    height: 4px;
+    width: 98%;
+    border-radius: 4px;
+    background-color: #2c2c2c;
 }
