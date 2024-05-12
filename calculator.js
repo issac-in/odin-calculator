@@ -137,7 +137,6 @@ function runEquals() {
 
 function setButtonsListener() {
     const buttons = document.querySelector(".buttons");
-
     buttons.addEventListener("click", (event) => {
         let target = event.target;
 
@@ -232,6 +231,75 @@ function setDecimal() {
     } else {
         console.error(messages.WTF);
     }
+}
+
+function setKeyboardListener() {
+    const body = document.querySelector("body");
+    body.addEventListener("keydown", (event) => {
+        switch(event.key) {
+            case (event.shiftKey && "Backspace"):
+                runClearAll();
+                break;
+            case "Backspace":
+                runBackspace();
+                break;
+            case ("Enter"):
+            case ("="):
+                runEquals();
+                break;
+            case EXPONENT:
+                setOperator(EXPONENT);
+                break;
+            case MULTIPLY:
+                setOperator(MULTIPLY);
+                break;
+            case DIVIDE:
+                setOperator(DIVIDE);
+                break; 
+            case ADD:
+                setOperator(ADD);
+                break;
+            case SUBTRACT:
+                setOperator(SUBTRACT);
+                break;
+            case "u":
+                setSign();
+                break;
+            case ".":
+                setDecimal();
+                break;
+            case "0":
+                setOperand(0);
+                break;
+            case "1":
+                setOperand(1);
+                break;
+            case "2":
+                setOperand(2);
+                break;
+            case "3":
+                setOperand(3);
+                break; 
+            case "4":
+                setOperand(4);
+                break;
+            case "5":
+                setOperand(5);
+                break;
+            case "6":
+                setOperand(6);
+                break;
+            case "7":
+                setOperand(7);
+                break;
+            case "8":
+                setOperand(8);
+                break;
+            case "9":
+                setOperand(9);
+                break;    
+        }
+    });
 }
 
 function setOperand(input) {
@@ -348,6 +416,7 @@ function updateOperand(num) {
 
 // Call at Run-time
 setButtonsListener();
+setKeyboardListener();
 
 // Why the if(): https://bit.ly/fix_for_referenceError_module_is_not_defined
 if (typeof module === "object") { 
